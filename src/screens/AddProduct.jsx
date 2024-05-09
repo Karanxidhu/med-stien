@@ -24,7 +24,7 @@ const AddProduct = () => {
     const formSubmit = async()=>{
         try {
           console.log(details)
-          const response = await fetch('http://localhost:5000/api/product/addproduct',{
+          const response = await fetch('https://med-stien-backend.vercel.app/api/product/addproduct',{
             method: "POST",
             headers: {
               'Content-Type': 'application/json',

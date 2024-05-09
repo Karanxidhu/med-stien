@@ -8,7 +8,7 @@ const CartScreen = () => {
       
     const [items, setItems] = useState([]); 
     const fetchData = async() =>{
-        const response = await fetch(`http://localhost:5000/api/cart/`,{
+        const response = await fetch(`https://med-stien-backend.vercel.app/api/cart/`,{
         method:'GET',
         headers: {
           'Content-Type': 'application/json',

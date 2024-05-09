@@ -10,13 +10,13 @@ const CartItem = (props) => {
     const [product, setProduct] = useState({ name: '', desc: '', price: '', image: '' })
     const fetchData = async () => {
         console.log("fetching 1")
-        const response = await fetch(`http://localhost:5000/api/product/fetchproduct/${p_id}`)
+        const response = await fetch(`https://med-stien-backend.vercel.app/api/product/fetchproduct/${p_id}`)
         const json = await response.json()
         console.log(json)
         setProduct({ name: json[0].name, desc: json[0].description, price: json[0].price, image: json[0].images[0] })
     }
     const handleminus = async()=>{
-        const response = await fetch(`http://localhost:5000/api/cart/dec/${p_id}`,{
+        const response = await fetch(`https://med-stien-backend.vercel.app/api/cart/dec/${p_id}`,{
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ const CartItem = (props) => {
         window.location.reload(false);
     }
     const handleplus = async()=>{
-        const response = await fetch(`http://localhost:5000/api/cart/addproduct/${p_id}`,{
+        const response = await fetch(`https://med-stien-backend.vercel.app/api/cart/addproduct/${p_id}`,{
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

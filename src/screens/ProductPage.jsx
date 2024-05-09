@@ -13,9 +13,9 @@ const ProductPage = () => {
   const [loading, setLoading] = useState(true)
   const [resL, setResL] = useState(false)
   const [query, setQuery] = useState("")
-  const [response, setResponse] = useState("Ask anything you want to ask")
+  const [response, setResponse] = useState("")
   const addToCart = async () => {
-    const response = await fetch(`http://localhost:5000/api/cart/addproduct/${id}`, {
+    const response = await fetch(`https://med-stien-backend.vercel.app/api/cart/addproduct/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -29,7 +29,7 @@ const ProductPage = () => {
   const fetchProduct = async () => {
     setLoading(true)
     console.log('fetching product')
-    const response = await fetch(`http://localhost:5000/api/product/fetchproduct/${id}`)
+    const response = await fetch(`https://med-stien-backend.vercel.app/api/product/fetchproduct/${id}`)
     const json = await response.json()
     setProductDetails(json[0])
     console.log(productDetails)
@@ -37,7 +37,7 @@ const ProductPage = () => {
   }
   const handleGPT = async () => {
     setResL(true)
-    const result = await fetch('http://localhost:5000/api/gpt/ask', {
+    const result = await fetch('https://med-stien-backend.vercel.app/api/gpt/ask', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ const ProductPage = () => {
   }
   const handleUse = async () => {
     setResL(true)
-    const result = await fetch('http://localhost:5000/api/gpt/ask', {
+    const result = await fetch('https://med-stien-backend.vercel.app/api/gpt/ask', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -67,7 +67,7 @@ const ProductPage = () => {
   }
   const handleSideEff = async () => {
     setResL(true)
-    const result = await fetch('http://localhost:5000/api/gpt/ask', {
+    const result = await fetch('https://med-stien-backend.vercel.app/api/gpt/ask', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -82,7 +82,7 @@ const ProductPage = () => {
   }
   const handleSalts = async () => {
     setResL(true)
-    const result = await fetch('http://localhost:5000/api/gpt/ask', {
+    const result = await fetch('https://med-stien-backend.vercel.app/api/gpt/ask', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -142,9 +142,10 @@ const ProductPage = () => {
                   </div>
                   {/*body*/}
                   <div className="p-6 flex-auto">
-                    <div className='h-[350px] overflow-y-scroll py-8 flex justify-center items-center'>
+                      <p>Ask anything you want to ask</p>
+                    {response.length>0 &&<div className='h-[350px] overflow-y-scroll py-8 flex'>
                     <ReactMarkdown children={response} className="text-lg" />
-                    </div>
+                    </div>}
                     {resL&&<div className='flex justify-center items-center pb-8'>
                       <div
                         className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"

@@ -11,7 +11,7 @@ function HomeScreen() {
   const [items, setItems] = useState(initProduct)
   const [loading, setLoading] = useState(true)
   const fetchItems =async () => {
-    const response = await fetch('http://localhost:5000/api/product/fetchallproducts',{
+    const response = await fetch('https://med-stien-backend.vercel.app/api/product/fetchallproducts',{
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
