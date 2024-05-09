@@ -141,8 +141,8 @@ const ProductPage = () => {
                     </button>
                   </div>
                   {/*body*/}
-                  <div className="p-6 flex-auto overflow-scroll ">
-                    <div className='h-[400px] overflow-y-scroll py-8'>
+                  <div className="p-6 flex-auto">
+                    <div className='h-[350px] overflow-y-scroll py-8 flex justify-center items-center'>
                     <ReactMarkdown children={response} className="text-lg" />
                     </div>
                     {resL&&<div className='flex justify-center items-center pb-8'>
