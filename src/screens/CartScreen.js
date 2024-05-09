@@ -5,6 +5,7 @@ const CartScreen = () => {
     useEffect(()=>{
         fetchData();
       },[])
+      
     const [items, setItems] = useState([]); 
     const fetchData = async() =>{
         const response = await fetch(`http://localhost:5000/api/cart/`,{
@@ -28,19 +29,6 @@ const CartScreen = () => {
             return (item.quantity>0) && <CartItem p_id ={item.product_id} key={item._id} quantity={item.quantity}/>
           })}
         <hr class="my-4"/>
-        <div class="flex justify-between items-center">
-            <span class="font-bold">Subtotal:</span>
-            <span class="font-bold">$19.99</span>
-        </div>
-        <div class="flex justify-between items-center mt-4">
-            <span>Taxes:</span>
-            <span>$1.00</span>
-        </div>
-        <hr class="my-4"/>
-        <div class="flex justify-between items-center">
-            <span class="font-bold">Total:</span>
-            <span class="font-bold">$20.99</span>
-        </div>
         <div class="flex justify-center mt-6">
             <button class="bg-[#275C53] text-white font-bold py-2 px-4 rounded">Checkout</button>
         </div>

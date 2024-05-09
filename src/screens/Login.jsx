@@ -12,8 +12,7 @@ const Login = () => {
     useEffect(()=>{
         const token = localStorage.getItem('token')
         if(token){
-            navigate('/')
-            alert('already logged in')
+            navigate('/addProduct')
         }
     },[])
 

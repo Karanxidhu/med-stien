@@ -1,7 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 const AddProduct = () => {
+    useEffect(()=>{
+        const role = localStorage.getItem("ChemRole");
+        if(role != 'seller'){
+            navigate("/addProduct")
+        }
+    },[])
     const navigate = useNavigate();
     const [details, setDetails] = useState({
         name: '',

@@ -32,7 +32,7 @@ console.log(items)
           <h1 className='text-5xl text-center py-12'>
             Products Available
           </h1>
-          <div className=" flex gap-8 flex-wrap justify-center items-center">
+          <div className=" flex gap-8 flex-wrap justify-center items-center ">
             {items.map((item, key)=>{
               return(
                 <Card data = {item} key={key}/>
