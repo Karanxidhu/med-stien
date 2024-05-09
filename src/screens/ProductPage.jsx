@@ -98,22 +98,22 @@ const ProductPage = () => {
   const [showModal, setShowModal] = React.useState(false);
   return (
     <div className='bg-[#275C53] w-full min-h-[89vh] flex items-center'>
-      {!loading && <div className='min-h-full w-[80%] mx-auto py-16 flex items-start'>
-        <div className='w-1/2'
+      {!loading && <div className='min-h-full md:w-[80%] w-full mx-auto py-16 flex items-start flex-col md:flex-row'>
+        <div className='md:w-1/2 w-[90%] mx-auto '
         >
-          <img src={productDetails.images[0]} className='w-[80%]' alt="" />
+          <img src={productDetails.images[0]} className='md:w-[80%] w-full' alt="" />
         </div>
-        <div className='w-1/2 space-y-5 pt-5'>
-          <h1 className='text-white text-5xl font-semibold text-left'>{productDetails.name}</h1>
-          <h1 className='text-white text-2xl text-left'><span className='font-light'>Brand:</span>{productDetails.brand}</h1>
+        <div className='md:w-1/2 w-[90%] mx-auto space-y-5 pt-5'>
+          <h1 className='text-white text-3xl md:text-5xl font-semibold text-left'>{productDetails.name}</h1>
+          <h1 className='text-white text-xl md:text-2xl text-left'><span className='font-light'>Brand:</span>{productDetails.brand}</h1>
           <p className='text-white text-base text-left'><span className='font-light'>Description: </span>{productDetails.description.slice(0, 250)}...</p>
-          <h1 className='text-white text-2xl text-left font-semibold' ><span className='font-light'>Price: </span>₹{productDetails.price}</h1>
+          <h1 className='text-white text-base md:text-2xl text-left font-semibold' ><span className='font-light'>Price: </span>₹{productDetails.price}</h1>
           <div className='flex justify-center pt-16'>
             <div className='w-[50%] mx-auto flex justify-center items-center cursor-pointer' onClick={() => setShowModal(true)}>
-              <p className='text-xl font-bold bg-[#7affe9] px-8 py-4 text-[#275C53] rounded-full'>Ask GPT</p>
+              <p className=' text-sm sm:text-xl font-bold bg-[#7affe9] px-8 py-4 text-[#275C53] rounded-full'>Ask GPT</p>
             </div>
             <div className='w-[50%] mx-auto flex justify-center items-center cursor-pointer' onClick={addToCart}>
-              <p className='text-xl font-bold bg-white px-8 py-4 text-[#275C53] rounded-full'>Add to cart</p>
+              <p className='text-sm sm:text-xl font-bold bg-white px-8 py-4 text-[#275C53] rounded-full'>Add to cart</p>
             </div>
           </div>
         </div>
@@ -144,7 +144,7 @@ const ProductPage = () => {
                   <div className="p-6 flex-auto">
                       <p>Ask anything you want to ask</p>
                     {response.length>0 &&<div className='h-[350px] overflow-y-scroll py-8 flex'>
-                    <ReactMarkdown children={response} className="text-lg" />
+                    <ReactMarkdown children={response} className="text-base sm:text-lg" />
                     </div>}
                     {resL&&<div className='flex justify-center items-center pb-8'>
                       <div
@@ -155,8 +155,8 @@ const ProductPage = () => {
                         >Loading...</span>
                       </div>
                     </div>}
-                    <input class="mb-4 p-2 appearance-none block w-full bg-gray-200 placeholder-gray-900 rounded border focus:border-teal-500" type="text" placeholder="Enter you query" name='query' onChange={(e) => { setQuery(e.target.value); console.log(query) }} />
-                    <div className='px-5 flex justify-start items-center gap-x-5 flex-wrap'>
+                    <input class="mt-4 mb-4 p-2 appearance-none block w-full bg-gray-200 placeholder-gray-900 rounded border focus:border-teal-500" type="text" placeholder="Enter you query" name='query' onChange={(e) => { setQuery(e.target.value); console.log(query) }} />
+                    <div className='px-5 flex justify-start items-center gap-5 flex-wrap'>
                       <div className='border rounded-lg px-4 py-2 cursor-pointer' onClick={handleUse}>
                         <p className='text-lg'>Use</p>
                       </div>

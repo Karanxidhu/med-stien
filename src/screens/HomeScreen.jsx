@@ -37,7 +37,7 @@ function HomeScreen() {
       <div></div>
       <div className="w-full mx-auto lg:flex-row flex-col flex justify-around items-center pb-32 gap-y-16 px-12">
         <div className=" w-[90%] lg:w-[40%] ">
-          <h1 className="text-8xl text-white">
+          <h1 className="text-4xl md:text-8xl text-white">
             <span className="hover:text-[#686661] transition-all duration-1000">
               Chemist
             </span>{" "}
@@ -50,12 +50,12 @@ function HomeScreen() {
               Inventory
             </span>
           </h1>
-          <p className="text-lg font-light text-white leading-8 w-full lg:w-[70%] text-justify pt-8 pb-20">
+          <p className="text-sm md:text-lg font-light text-white leading-8 w-full lg:w-[70%] text-justify pt-8 pb-20">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum sit
             delectus, deserunt molestiae laborum facilis quisquam odit tempore
             vitae fuga rem, culpa a expedita aut?
           </p>
-          <span className=" text-xs text-[#275C53] px-20 py-5 bg-[#E2BB53] rounded-full hover:bg-[#e2bc539c] transition-all duration-1000">
+          <span className=" text-xs text-[#275C53] px-12 md:px-20 py-3 md:py-5 bg-[#E2BB53] rounded-full hover:bg-[#e2bc539c] transition-all duration-1000">
             READ MORE
           </span>
         </div>
@@ -80,7 +80,7 @@ function HomeScreen() {
           <img src="https://skinkraft.com/cdn/shop/articles/Vitamin-A_aa8a0823-2fa9-49cb-a6f7-b90a6fd2f6b3_1024x400.jpg?v=1591019155" alt="" />
         </div>
         <div className=" w-[80%] lg:w-[40%] mx-auto">
-          <h1 className="text-8xl text-[#275C53]">
+          <h1 className="text-4xl md:text-8xl text-[#275C53]">
             <span className="hover:text-[#E2BB53] transition-all duration-1000">
               Vitamins
             </span>{" "}
@@ -93,7 +93,7 @@ function HomeScreen() {
               Inventory
             </span>
           </h1>
-          <p className="text-lg font-light text-[#275C53] leading-8 w-full lg:w-[70%] text-justify pt-8 pb-20">
+          <p className="text-sm md:text-lg font-light text-[#275C53] leading-8 w-full lg:w-[70%] text-justify pt-8 pb-20">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum sit
             delectus, deserunt molestiae laborum facilis quisquam odit tempore
             vitae fuga rem, culpa a expedita aut?
